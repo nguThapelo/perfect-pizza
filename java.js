@@ -20,6 +20,8 @@ const grandTotal = document.querySelector(".grandTotal");
 
 const Check = document.querySelector(".Check");
 
+//const Amount = document.querySelector(".Amount")
+
 var addSmall = 0.00;
 var addMedium = 0.00;
 var addLarge = 0.00;
@@ -101,8 +103,5 @@ Check.addEventListener('click', function(){
     } 
 })
 
-// setTimeout(function() {
-//     grandTotal.innerHTML = 
-// }, 5000)
 
 
