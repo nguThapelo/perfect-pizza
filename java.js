@@ -30,43 +30,53 @@ var addTotal = 0.00;
 smallAdd.addEventListener('click', function(){
         addSmall += 39.99;
         addTotal += 39.99;
-     smalltotal.innerHTML = addSmall.toFixed(2);
-     grandTotal.innerHTML = addTotal.toFixed(2);
+     smalltotal.innerHTML = "R" + addSmall.toFixed(2);
+     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 smallSubtract.addEventListener('click', function(){
             addSmall -= 39.99;
             addTotal -= 39.99;
-    smalltotal.innerHTML = addSmall.toFixed(2);
-    grandTotal.innerHTML = addTotal.toFixed(2);
+            if(addSmall < 0) {
+                addSmall += 39.99;
+                addTotal += 39.99;
+                return;
+            }
+    smalltotal.innerHTML = "R" + addSmall.toFixed(2);
+    grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 Buy1.addEventListener('click', function(){
     addSmall += 39.99;
     addTotal += 39.99;
- smalltotal.innerHTML = addSmall.toFixed(2);
- grandTotal.innerHTML = addTotal.toFixed(2);
+ smalltotal.innerHTML = "R" + addSmall.toFixed(2);
+ grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
  ///Medium Pizza
  mediumAdd.addEventListener('click', function(){
     addMedium += 69.99;
     addTotal += 69.99;
- mediumtotal.innerHTML = addMedium.toFixed(2);
- grandTotal.innerHTML = addTotal.toFixed(2);
+ mediumtotal.innerHTML = "R" + addMedium.toFixed(2);
+ grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 mediumSubtract.addEventListener('click', function(){
         addMedium -= 69.99;
         addTotal -= 69.99;
-mediumtotal.innerHTML = addMedium.toFixed(2);
-grandTotal.innerHTML = addTotal.toFixed(2);
+        if(addMedium < 0) {
+            addMedium += 69.99;
+            addTotal += 69.99;
+            return;
+        }
+ mediumtotal.innerHTML = "R" + addMedium.toFixed(2);
+grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 Buy2.addEventListener('click', function(){
 addMedium += 69.99;
 addTotal += 69.99;
-mediumtotal.innerHTML = addMedium.toFixed(2);
-grandTotal.innerHTML = addTotal.toFixed(2);
+mediumtotal.innerHTML = "R" + addMedium.toFixed(2);
+grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 //Large Pizza
@@ -74,15 +84,20 @@ grandTotal.innerHTML = addTotal.toFixed(2);
 largeAdd.addEventListener('click', function(){
     addLarge += 119.99;
     addTotal += 119.99;
- largetotal.innerHTML = addLarge.toFixed(2);
- grandTotal.innerHTML = addTotal.toFixed(2);
+ largetotal.innerHTML = "R" + addLarge.toFixed(2);
+ grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 largeSubtract.addEventListener('click', function(){
         addLarge -= 119.99;
         addTotal -= 119.99;
-largetotal.innerHTML = addLarge.toFixed(2);
-grandTotal.innerHTML = addTotal.toFixed(2);
+        if(addLarge < 0) {
+            addLarge += 119.99;
+            addTotal += 119.99;
+            return;
+        }
+largetotal.innerHTML = "R" + addLarge.toFixed(2);
+grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
 Buy3.addEventListener('click', function(){
@@ -102,6 +117,3 @@ Check.addEventListener('click', function(){
          alert("you exceeded your budget")
     } 
 })
-
-
-
