@@ -6,6 +6,14 @@ font-size:medium;
 
 }
 
+.Message {
+    color: green;
+    font-size: x-large;
+}
+
+.hide {
+    display: none;
+}
 .img {
     border: 2px solid #F26419;
     border-radius: 2em;
