@@ -127,27 +127,31 @@ Order3.addEventListener('click', function () {
 //checkout
 
 Check.addEventListener('click', function () {
-
     amount.classList.remove("hide");
     buyButton.classList.remove("hide");
 
 })
 
 buyButton.addEventListener('click', function () {
-    // if (addTotal > 39 && addTotal < 499) { }
+
     if (addTotal >= payment.value) {
         Message.classList.remove("hide");
-        Message.innerHTML = "you exceeded your budget";
+        Message.innerHTML = "your budget is not enough";
     }
 
     else if (addTotal < payment.value) {
         Message.classList.remove("hide");
 
         Message.innerHTML = "Enjoy your Pizza";
-    } //else if {
-    // 
-    //}
+    }
 
+    setTimeout (function(){
+        Message.classList.add("hide");        
+    }, 2000)
+
+    
+
+    
 })
 
 
