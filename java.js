@@ -1,22 +1,22 @@
 const smallAdd = document.querySelector(".smallAdd");
 const smallSubtract = document.querySelector(".smallSubtract");
 const smalltotal = document.querySelector(".smalltotal");
-
-const Buy1 = document.querySelector(".Buy1");
-
+const ShoppingCart = document.querySelector(".ShoppingCart");
+const Order1 = document.querySelector(".Order1");
+const payment = document.querySelector(".payment");
 const mediumAdd = document.querySelector(".mediumAdd");
 const mediumSubtract = document.querySelector(".mediumSubtract");
 const mediumtotal = document.querySelector(".mediumtotal");
 
-const Buy2 = document.querySelector(".Buy2");
-
+const Order2 = document.querySelector(".Order2");
+const buyButton = document.querySelector(".buyButton");
 const largeAdd = document.querySelector(".largeAdd");
 const largeSubtract = document.querySelector(".largeSubtract");
 const largetotal = document.querySelector(".largetotal");
 
 const amount = document.querySelector(".amount");
 
-const Buy3 = document.querySelector(".Buy3");
+const Order3 = document.querySelector(".Order3");
 
 const grandTotal = document.querySelector(".grandTotal");
 
@@ -38,6 +38,9 @@ smallAdd.addEventListener('click', function () {
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
+
+
+
 smallSubtract.addEventListener('click', function () {
     addSmall -= 39.99;
     addTotal -= 39.99;
@@ -50,11 +53,14 @@ smallSubtract.addEventListener('click', function () {
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
-Buy1.addEventListener('click', function () {
+Order1.addEventListener('click', function () {
     addSmall += 39.99;
     addTotal += 39.99;
     smalltotal.innerHTML = "R" + addSmall.toFixed(2);
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
+
+    ShoppingCart.classList.remove("hide");
+
 })
 ///Medium Pizza
 mediumAdd.addEventListener('click', function () {
@@ -76,11 +82,14 @@ mediumSubtract.addEventListener('click', function () {
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
-Buy2.addEventListener('click', function () {
+Order2.addEventListener('click', function () {
     addMedium += 69.99;
     addTotal += 69.99;
     mediumtotal.innerHTML = "R" + addMedium.toFixed(2);
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
+
+    ShoppingCart.classList.remove("hide");
+
 })
 
 //Large Pizza
@@ -104,12 +113,14 @@ largeSubtract.addEventListener('click', function () {
     grandTotal.innerHTML = "R" + addTotal.toFixed(2);
 })
 
-Buy3.addEventListener('click', function () {
+Order3.addEventListener('click', function () {
+
     addLarge += 119.99;
     addTotal += 119.99;
     largetotal.innerHTML = addLarge.toFixed(2);
     grandTotal.innerHTML = addTotal.toFixed(2);
 
+    ShoppingCart.classList.remove("hide");
 
 })
 
@@ -117,17 +128,26 @@ Buy3.addEventListener('click', function () {
 
 Check.addEventListener('click', function () {
 
+    amount.classList.remove("hide");
+    buyButton.classList.remove("hide");
 
-    if (addTotal > 39 && addTotal < 499) {
-  Message.innerHTML = "Enjoy your pizzas";
-        
-      
-
-
-    }
-    else if (addTotal >= 500) {
-        alert("you exceeded your budget")
-    }
-    
 })
+
+buyButton.addEventListener('click', function () {
+    // if (addTotal > 39 && addTotal < 499) { }
+    if (addTotal >= payment.value) {
+        Message.classList.remove("hide");
+        Message.innerHTML = "you exceeded your budget";
+    }
+
+    else if (addTotal < payment.value) {
+        Message.classList.remove("hide");
+
+        Message.innerHTML = "Enjoy your Pizza";
+    } //else if {
+    // 
+    //}
+
+})
+
 
